@@ -6,9 +6,9 @@ import {
   HomepageContainer,
 } from './homepage.styles'
 
-const HomePage = () => (
+const HomePage = ({ history }) => (
   <HomepageContainer>
-    <Directory />
+    <Directory history={history}/>
   </HomepageContainer>
 )
 

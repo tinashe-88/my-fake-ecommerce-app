@@ -11,6 +11,19 @@ export const MenuItemContainer = styled.div`
   margin: 0 7.5px 15px;
   overflow: hidden;
 
+  &:hover {
+		cursor: pointer;
+
+		& .background-image {
+			transform: scale(1.1);
+			transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+		}
+
+		& .content {
+      opacity: 0.9;
+		}
+	}
+  
   &.large {
     height: 380px;
   }
@@ -29,7 +42,6 @@ export const BackgroundImage = styled.div`
   height: 100%;
   background-size: cover;
   background-position: center;
-
 `
 
 export const ContentContainer = styled.div`
@@ -44,12 +56,6 @@ export const ContentContainer = styled.div`
   opacity: 0.7;
   position: absolute;
 
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-    opacity: 0.9;
-  }
 `
 
 export const TitleContainer = styled.h2`

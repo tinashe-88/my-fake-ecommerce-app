@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { withRouter } from 'react-router-dom'
+
 import {
   MenuItemContainer,
   BackgroundImage,
@@ -8,20 +10,24 @@ import {
   SubtitleContainer
 } from './menu-item.styles'
 
-const MenuItem = ({ title, imageUrl, size }) => (
+const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
   <MenuItemContainer
     className={`${size}`}
+    onClick={() => history.push(`${match.url}${linkUrl}`)}
   >
     <BackgroundImage 
       style={{
         backgroundImage: `url(${imageUrl})`
       }}
+      className='background-image'
     />
-    <ContentContainer>
+    <ContentContainer
+      className='content'
+    >
       <TitleContainer>{title}</TitleContainer>
       <SubtitleContainer>Shop Now</SubtitleContainer>
     </ContentContainer>
   </MenuItemContainer>
 )
 
-export default MenuItem
+export default withRouter(MenuItem)
