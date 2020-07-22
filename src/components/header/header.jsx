@@ -1,6 +1,7 @@
 import React from 'react'
-
 import { Link } from 'react-router-dom'
+
+import { auth } from '../../firebase/firebase.utils'
 
 import {
   ReactComponent as Logo
@@ -11,7 +12,7 @@ import {
   OptionsContainer
 } from './header.styles'
 
-const Header = () => (
+const Header = ({ currentUser }) => (
   <HeaderContainer>
     <Link 
       to='/'
@@ -32,12 +33,26 @@ const Header = () => (
       >
         Contact
       </Link>
-      <Link 
-        to='/signin'
-        className='option'
-      >
-        Sign In
-      </Link>
+      {
+        currentUser ? (
+          <div 
+            className='option'
+            onClick={() => auth.signOut()}
+          >
+            Sign Out
+          </div>
+        ) : (
+          <Link 
+            to='/signin'
+            className='option'
+          >
+            Sign In
+          </Link>
+        )
+
+        
+      }
+    
     </OptionsContainer>
   </HeaderContainer>
 )
