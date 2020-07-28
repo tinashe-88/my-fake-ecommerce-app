@@ -1,4 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux'
+
+import CartItem from '../cart-item/cart-item'
 
 import { 
   CartDropdownContainer,
@@ -7,11 +10,19 @@ import {
   EmptyMessageContainer
 } from './cart-dropdown.styles'
 
-const CartDropdown = () => (
+const CartDropdown = ({ cartItems }) => (
   <CartDropdownContainer>
-    <CartItemsContainer/>
+    <CartItemsContainer>
+    {cartItems.map(cartItem => (
+      <CartItem key={cartItem.id} item={cartItem} />
+    ))}
+    </CartItemsContainer>
     <CartDropdownButton>Go to checkout</CartDropdownButton>
   </CartDropdownContainer>
 )
 
-export default CartDropdown
+const mapStateToProps = ({ cart: { cartItems }}) => ({
+  cartItems
+})
+
+export default connect(mapStateToProps)(CartDropdown)
