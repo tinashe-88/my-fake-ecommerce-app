@@ -13,7 +13,9 @@ import {
   ImageContainer,
   TextContainer,
   QuantityContainer,
-  RemoveButtonContainer
+  RemoveButtonContainer,
+  MinusSignContainer,
+  PlusSignContainer
 } from './checkout-item.styles'
 
 const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
@@ -25,13 +27,13 @@ const CheckoutItem = ({ cartItem, clearItem, addItem, removeItem }) => {
       </ImageContainer>
       <TextContainer>{name}</TextContainer>
       <QuantityContainer>
-        <div onClick={() => removeItem(cartItem)}>
+        <MinusSignContainer onClick={() => removeItem(cartItem)}>
           &#10134;
-        </div>
+        </MinusSignContainer>
         <span>{quantity}</span>
-        <div onClick={() => addItem(cartItem)}>
+        <PlusSignContainer onClick={() => addItem(cartItem)}>
           &#10133;
-        </div>
+        </PlusSignContainer>
       </QuantityContainer>
       <TextContainer>{price}</TextContainer>
       <RemoveButtonContainer onClick={() => clearItem(cartItem)}>

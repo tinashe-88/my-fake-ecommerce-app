@@ -42,10 +42,17 @@ export const QuantityContainer = styled(TextContainer)`
   div {
     cursor: pointer;
   }
-
 `
 
 export const RemoveButtonContainer = styled.span`
   padding-left: 33px;
   cursor: pointer;
+`
+
+export const MinusSignContainer = styled.div`
+  font-size: 15px;
+`
+
+export const PlusSignContainer = styled.div`
+  font-size: 15px;
 `
