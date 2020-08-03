@@ -4,13 +4,14 @@ import 'firebase/auth'
 
 // Web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBA-ww_eCQPsWMWM1MivimyiVrfe0anoQw",
-  authDomain: "my-shop-app-b8b9b.firebaseapp.com",
-  databaseURL: "https://my-shop-app-b8b9b.firebaseio.com",
-  projectId: "my-shop-app-b8b9b",
-  storageBucket: "my-shop-app-b8b9b.appspot.com",
-  messagingSenderId: "779952513906",
-  appId: "1:779952513906:web:97678c0e8411e1cd"
+  apiKey: "AIzaSyDgq5-3ahQB5XTgHKXdkQq5wSSqby2_16c",
+  authDomain: "my-fake-ecommerce.firebaseapp.com",
+  databaseURL: "https://my-fake-ecommerce.firebaseio.com",
+  projectId: "my-fake-ecommerce",
+  storageBucket: "my-fake-ecommerce.appspot.com",
+  messagingSenderId: "1038620962488",
+  appId: "1:1038620962488:web:d627fbb679c78853d84e4d",
+  measurementId: "G-P0TW8K9C4D"
 }
 
 // Initialize Firebase
@@ -21,10 +22,15 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return
 
   const userRef = firestore.doc(`users/${userAuth.uid}`)
+  const collectionRef = firestore.collection('users')
 
   const snapShot = await userRef.get()
+  const collectionSnapshot = await collectionRef.get()
+
+  console.log({collectionSnapshot})
 
   if (!snapShot.exists) {
+    // Create new doc object if user doesn't exist
     const { displayName, email } = userAuth
     const createdAt = new Date()
     try {
