@@ -14,7 +14,10 @@ import CheckOutPage from './pages/checkout/checkout'
 
 import Header from './components/header/header'
 
-import { auth, createUserProfileDocument } from './firebase/firebase.utils.js'
+import { 
+  auth, 
+  createUserProfileDocument
+} from './firebase/firebase.utils.js'
 
 import './App.css'
 
@@ -36,9 +39,8 @@ class App extends React.Component {
             }
           })
         })
-      } else {
-        setCurrentUser(userAuth)
       }
+      setCurrentUser(userAuth)
     })
   }
 
@@ -60,8 +62,7 @@ class App extends React.Component {
             <Redirect to='/'/>
           ) : (
             <SignInAndSignUpPage />
-          )
-          }/>
+          )}/>
         </Switch>
       </>
     )
