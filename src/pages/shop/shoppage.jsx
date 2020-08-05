@@ -31,9 +31,13 @@ class ShopPage extends React.Component {
     const { match } = this.props
     return (
       <>
-        <Route exact path={`${match.path}`} component={CollectionsOverview}/>
         <Route 
-          path={`${match.path}/:collectionId`} 
+          exact 
+          path={`${match.path}`} 
+          component={CollectionsOverview}
+        />
+        <Route 
+          path={`${match.path}/:collectionId`}
           component={CollectionPage}
         />
       </>
