@@ -5,6 +5,8 @@ import UserActionTypes from './user.types'
 import {
   signInSuccess,
   signInFailure,
+  signOutSuccess,
+  signOutFailure
 } from './user.actions'
 
 import { 
@@ -29,6 +31,7 @@ export function* getSnapshotFromUserAuth(userAuth){
   }
 }
 
+// Sign in with google gen function
 export function* signInWithGoogle(){
   try {
     const { user } = yield auth.signInWithPopup(googleProvider)
@@ -38,6 +41,7 @@ export function* signInWithGoogle(){
   }
 }
 
+// Sign in with email and password gen function
 export function* signInWithEmail({ payload: { email, password}}){
   try {
     const { user } = yield auth.signInWithEmailAndPassword(email, password)
@@ -47,6 +51,7 @@ export function* signInWithEmail({ payload: { email, password}}){
   }
 }
 
+// Is the user authenticated gen function
 export function* isUserAuthenticated(){
   try {
     const userAuth = yield getCurrentUser()
@@ -55,6 +60,16 @@ export function* isUserAuthenticated(){
     yield getSnapshotFromUserAuth(userAuth)
   } catch(error) {
     yield put(signInFailure(error))
+  }
+}
+
+// Sign out generator function
+export function* signOut(){
+  try {
+    yield auth.signOut()
+    yield put(signOutSuccess())
+  } catch(error){
+    yield put(signOutFailure(error))
   }
 }
 
@@ -79,10 +94,18 @@ export function* onCheckUserSession(){
   )
 }
 
+export function* onSignOutStart(){
+  yield takeLatest(
+    UserActionTypes.SIGN_OUT_START,
+    signOut
+  )
+}
+
 export function* userSagas(){
   yield all([
     call(onGoogleSignInStart),
     call(onEmailSignInStart),
-    call(onCheckUserSession)
+    call(onCheckUserSession),
+    call(onSignOutStart)
   ])
 }
