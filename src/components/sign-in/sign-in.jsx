@@ -5,9 +5,9 @@ import FormInput from '../form-input/form-input'
 import CustomButton from '../custom-button/custom-button'
 
 import {
-  auth,
-  signInWithGoogle
+  auth
 } from '../../firebase/firebase.utils'
+
 import { googleSignInStart } from '../../redux/user/user.actions'
 
 import {

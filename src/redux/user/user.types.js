@@ -8,4 +8,4 @@ const UserActionTypes = {
   EMAIL_SIGN_IN_FAILURE: 'EMAIL_SIGN_IN_FAILURE',
 }
 
-export  default UserActionTypes
+export default UserActionTypes
