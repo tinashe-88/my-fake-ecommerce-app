@@ -1,4 +1,4 @@
-import { UserActionTypes } from './user.types'
+import UserActionTypes from './user.types'
 
 // Set initial state
 const INITIAL_STATE = {
