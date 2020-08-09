@@ -13,12 +13,15 @@ export function* signInWithGoogle(){
     const userRef = yield auth.signInWithPopup(googleProvider)
     console.log(userRef)
   } catch(error){
-    console.log(error)
+    
   }
 }
 
 export function* onGoogleSignInStart(){
-  yield takeLatest(UserActionTypes.EMAIL_SIGN_IN_START)
+  yield takeLatest(
+    UserActionTypes.EMAIL_SIGN_IN_START, 
+    signInWithGoogle
+  )
 }
 
 export function* userSagas(){
