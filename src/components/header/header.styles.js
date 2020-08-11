@@ -25,3 +25,9 @@ export const OptionsContainer = styled.div`
     padding: 10px 15px;
   }
 `
+
+export const SignOutContainer = styled.div`
+  &:hover {
+    cursor: pointer
+  }
+`
