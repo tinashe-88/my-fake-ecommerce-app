@@ -13,8 +13,9 @@ import ContactPage from './pages/contact/contact'
 import CheckOutPage from './pages/checkout/checkout'
 
 import Header from './components/header/header'
+import Footer from './components/footer/footer'
 
-import './App.css'
+import { GlobalStyle } from './globalStyles'
 
 const App = ({ checkUserSession, currentUser }) => {
 
@@ -24,6 +25,7 @@ const App = ({ checkUserSession, currentUser }) => {
   
   return (
     <>
+      <GlobalStyle />
       <Header/>
       <Switch>
         <Route exact path='/' component={HomePage}/>
@@ -36,6 +38,7 @@ const App = ({ checkUserSession, currentUser }) => {
           <SignInAndSignUpPage />
         )}/>
       </Switch>
+      <Footer/>
     </>
   )
   

@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { createStructuredSelector } from 'reselect'
 
@@ -13,7 +12,9 @@ import { signOutStart } from '../../redux/user/user.actions'
 import {
   HeaderContainer,
   OptionsContainer,
-  SignOutContainer
+  SignOutContainer,
+  OptionLink,
+  LogoContainer,
 } from './header.styles'
 
 import {
@@ -22,25 +23,25 @@ import {
 
 const Header = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
-    <Link 
+    <LogoContainer
       to='/'
       className='logo-container'
     >
       <Logo />
-    </Link>
+    </LogoContainer>
     <OptionsContainer>
-      <Link 
+      <OptionLink 
         to='/shop'
         className='option'
       >
         Shop
-      </Link>
-      <Link 
+      </OptionLink>
+      <OptionLink 
         to='/contact'
         className='option'
       >
         Contact
-      </Link>
+      </OptionLink>
       {
         currentUser ? (
           <SignOutContainer
@@ -50,12 +51,12 @@ const Header = ({ currentUser, hidden, signOutStart }) => (
             Sign Out
           </SignOutContainer>
         ) : (
-          <Link 
+          <OptionLink 
             to='/signin'
             className='option'
           >
             Sign In
-          </Link>
+          </OptionLink>
         )  
       }
       <CartIcon />

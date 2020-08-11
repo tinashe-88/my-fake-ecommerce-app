@@ -57,26 +57,26 @@ export const CollectionFooterContainer = styled.div`
 `
 
 export const AddButtonContainer = styled(CustomButton)`
-    width: 80%;
-    opacity: 0.7;
-    position: absolute;
-    top: 255px;
-    display: none;
-    
+  width: 80%;
+  opacity: 0.7;
+  position: absolute;
+  top: 255px;
+  display: none;
+  
 
-    @media screen and (max-width: 800px) {
-        display: block;
-        opacity: 0.9;
-        min-width: unset;
-        padding: 0 10px;
-    }
+  @media screen and (max-width: 800px) {
+    display: block;
+    opacity: 0.9;
+    min-width: unset;
+    padding: 0 10px;
+  }
 `
 
 export const NameContainer = styled.span`
-    width: 90%;
-    margin-bottom: 15px;
+  width: 90%;
+  margin-bottom: 15px;
 `
 
 export const PriceContainer = styled.span`
-    width: 10%;
+  width: 10%;
 `
