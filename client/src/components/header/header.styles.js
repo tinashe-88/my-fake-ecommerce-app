@@ -43,10 +43,11 @@ export const OptionsContainer = styled.div`
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-around;
 
   @media screen and (max-width: 800px) {
     width: 80%;
+    justify-content: flex-end;
   }
 `
 
