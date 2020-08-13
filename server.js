@@ -31,6 +31,11 @@ app.listen(port, error => {
   console.log('Server running on port ' + port)
 })
 
+// Service worker
+app.get('./service-worker.js', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'service-worker.js'))
+})
+
 // Payment route
 app.post('/payment', (req, res) => {
   const body = {
