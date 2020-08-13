@@ -18,6 +18,7 @@ export const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 25px;
+  border-bottom: 1px solid #f4f4f4;
 
   @media screen and (max-width: 800px) {
     height: 60px;
@@ -46,8 +47,7 @@ export const OptionsContainer = styled.div`
   justify-content: space-around;
 
   @media screen and (max-width: 800px) {
-    width: 80%;
-    justify-content: flex-end;
+    width: 80%; 
   }
 `
 
