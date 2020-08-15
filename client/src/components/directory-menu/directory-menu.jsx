@@ -8,7 +8,7 @@ import MenuItem from '../menu-item/menu-item'
 
 import { DirectoryMenuContainer } from './directory-menu.styles'
 
-const Directory = ({ sections }) => (
+export const Directory = ({ sections }) => (
   <DirectoryMenuContainer>
     {sections.map(({ id, ...otherProps }) => (
       <MenuItem 
@@ -18,7 +18,9 @@ const Directory = ({ sections }) => (
     ))}
   </DirectoryMenuContainer>
 )
+
 const mapStateToProps = createStructuredSelector({
   sections: selectDirectorySection
 })
+
 export default connect(mapStateToProps)(Directory)
