@@ -4,7 +4,7 @@ import {
     FooterContainer
 } from './footer.styles'
 
-const Footer = () => (
+export const Footer = () => (
   <>
     <FooterContainer>
       Copyright ©{new Date().getFullYear()}.

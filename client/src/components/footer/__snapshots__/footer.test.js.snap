@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render Footer component 1`] = `
+<Fragment>
+  <styled.footer>
+    Copyright ©
+    2020
+    .
+     
+    All rights reserved.
+     
+  </styled.footer>
+</Fragment>
+`;
