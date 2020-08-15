@@ -32,7 +32,7 @@ describe('CartDropdown component', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  // Failing
+
   it('should call history.push when button is clicked', () => {
     wrapper.find('CartDropdownButton').simulate('click')
     expect(mockHistory.push).toHaveBeenCalled()
@@ -43,7 +43,6 @@ describe('CartDropdown component', () => {
     expect(wrapper.find(CartItem).length).toEqual(mockCartItems.length)
   })
 
-  // Failing
   it('should render EmptyMessageContainer if cartItems is empty', () => {
     const mockProps = {
       cartItems: [],

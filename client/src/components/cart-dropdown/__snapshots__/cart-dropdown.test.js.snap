@@ -28,10 +28,10 @@ exports[`CartDropdown component should render CartDropdown component 1`] = `
       key="3"
     />
   </styled.div>
-  <Styled(CustomButton)
+  <CartDropdownButton
     onClick={[Function]}
   >
     Go To Checkout
-  </Styled(CustomButton)>
+  </CartDropdownButton>
 </styled.div>
 `;
