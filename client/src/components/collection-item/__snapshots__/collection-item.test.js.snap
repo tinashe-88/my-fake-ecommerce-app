@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render CollectionItem component 1`] = `
+<styled.div>
+  <ImageContainer
+    imageUrl="www.imageUrl.com"
+  />
+  <styled.div>
+    <NameContainer>
+      blue briefs
+    </NameContainer>
+    <PriceContainer>
+      240
+    </PriceContainer>
+  </styled.div>
+  <AddButtonContainer
+    inverted={true}
+    onClick={[Function]}
+  >
+    Add To Cart
+  </AddButtonContainer>
+</styled.div>
+`;

@@ -49,6 +49,8 @@ export const ImageContainer = styled.div`
     background-image: ${({ imageUrl }) => `url(${imageUrl})`};
 `
 
+ImageContainer.displayName = 'ImageContainer'
+
 export const CollectionFooterContainer = styled.div`
     height: 5%;
     display: flex;
@@ -72,11 +74,17 @@ export const AddButtonContainer = styled(CustomButton)`
   }
 `
 
+AddButtonContainer.displayName = 'AddButtonContainer'
+
 export const NameContainer = styled.span`
   width: 90%;
   margin-bottom: 15px;
 `
 
+NameContainer.displayName = 'NameContainer'
+
 export const PriceContainer = styled.span`
   width: 10%;
 `
+
+PriceContainer.displayName = 'PriceContainer'

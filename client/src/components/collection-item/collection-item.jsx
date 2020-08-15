@@ -12,16 +12,12 @@ import {
   PriceContainer
 } from './collection-item.styles'
 
-const CollectionItem = ({ item, addItem }) => {
+export const CollectionItem = ({ item, addItem }) => {
   const { name, price, imageUrl } = item
 
   return (
     <CollectionItemContainer>
-      <ImageContainer
-        style={{
-          backgroundImage: `url(${imageUrl})`
-        }}
-      />
+      <ImageContainer imageUrl={imageUrl}/>
       <CollectionFooterContainer>
         <NameContainer>{name}</NameContainer>
         <PriceContainer>{price}</PriceContainer>
