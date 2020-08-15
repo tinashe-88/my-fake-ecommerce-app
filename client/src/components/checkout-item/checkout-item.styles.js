@@ -49,10 +49,16 @@ export const RemoveButtonContainer = styled.span`
   cursor: pointer;
 `
 
+RemoveButtonContainer.displayName = 'RemoveButtonContainer'
+
 export const MinusSignContainer = styled.div`
   font-size: 15px;
 `
 
+MinusSignContainer.displayName = 'MinusSignContainer'
+
 export const PlusSignContainer = styled.div`
   font-size: 15px;
 `
+
+PlusSignContainer.displayName = 'PlusSignContainer'
