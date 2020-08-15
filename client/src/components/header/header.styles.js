@@ -63,17 +63,12 @@ export const OptionLink = styled(Link)`
   }
 `
 
+OptionLink.displayName = 'OptionLink'
+
 export const OptionDiv = styled.div`
-    ${OptionContainerStyles}
+  ${OptionContainerStyles}
 
-    &:hover {
-        ${HoverLinks}
-    }
-    
-`
-
-export const SignOutContainer = styled.div`
   &:hover {
-    cursor: pointer
+      ${HoverLinks}
   }
 `

@@ -12,7 +12,6 @@ import { signOutStart } from '../../redux/user/user.actions'
 import {
   HeaderContainer,
   OptionsContainer,
-  SignOutContainer,
   OptionLink,
   LogoContainer,
 } from './header.styles'
@@ -21,39 +20,35 @@ import {
   ReactComponent as Logo
 } from '../../assets/fake-logo.svg'
 
-const Header = ({ currentUser, hidden, signOutStart }) => (
+export const Header = ({ currentUser, hidden, signOutStart }) => (
   <HeaderContainer>
     <LogoContainer
       to='/'
-      className='logo-container'
     >
       <Logo />
     </LogoContainer>
     <OptionsContainer>
       <OptionLink 
         to='/shop'
-        className='option'
       >
         Shop
       </OptionLink>
       <OptionLink 
         to='/contact'
-        className='option'
       >
         Contact
       </OptionLink>
       {
         currentUser ? (
-          <SignOutContainer
-            className='option'
+          <OptionLink
+            as='div'
             onClick={signOutStart}
           >
             Sign Out
-          </SignOutContainer>
+          </OptionLink>
         ) : (
           <OptionLink 
             to='/signin'
-            className='option'
           >
             Sign In
           </OptionLink>
