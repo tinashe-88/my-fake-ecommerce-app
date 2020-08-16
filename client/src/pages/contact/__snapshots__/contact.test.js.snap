@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render Homepage component 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.div>
+      <styled.h2>
+        Let's connect
+      </styled.h2>
+      <styled.div>
+        <Styled(styled.div)>
+          <TwitterIcon />
+        </Styled(styled.div)>
+        <Styled(styled.div)>
+          <InstagramIcon />
+        </Styled(styled.div)>
+        <Styled(styled.div)>
+          <GithubIcon />
+        </Styled(styled.div)>
+      </styled.div>
+    </styled.div>
+  </styled.div>
+</styled.div>
+`;
