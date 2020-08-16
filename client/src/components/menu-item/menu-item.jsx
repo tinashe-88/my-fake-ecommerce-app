@@ -10,15 +10,15 @@ import {
   SubtitleContainer
 } from './menu-item.styles'
 
-const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
+export const MenuItem = ({ 
+  title, imageUrl, size, history, linkUrl, match 
+}) => (
   <MenuItemContainer
-    className={`${size}`}
+    size={`${size}`}
     onClick={() => history.push(`${match.url}${linkUrl}`)}
   >
     <BackgroundImage 
-      style={{
-        backgroundImage: `url(${imageUrl})`
-      }}
+      imageUrl={imageUrl}
       className='background-image'
     />
     <ContentContainer
