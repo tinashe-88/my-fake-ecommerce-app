@@ -12,8 +12,6 @@ import {
 } from '../../firebase/firebase.utils'
 
 export function* fetchCollectionAsync(){
-  yield console.log('Fired!!!')
-
   try {
     const collectionRef = firestore.collection('collections')
     const snapshot = yield collectionRef.get()
