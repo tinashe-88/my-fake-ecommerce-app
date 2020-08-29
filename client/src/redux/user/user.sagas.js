@@ -20,6 +20,8 @@ import {
 
 // Reusable generator function
 export function* getSnapshotFromUserAuth(userAuth, additionalData){
+  console.log(userAuth)
+
   try {
     const userRef = yield call(
       createUserProfileDocument, 
